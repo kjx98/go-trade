@@ -2,9 +2,9 @@ package trade
 
 import (
 	"fmt"
-	"github.com/markcheno/go-quote"
-	"github.com/markcheno/go-talib"
-	anko_core "github.com/mattn/anko/builtins"
+	"github.com/kjx98/go-quote"
+	"github.com/kjx98/go-talib"
+	anko_core "github.com/mattn/anko/core"
 	"github.com/mattn/anko/vm"
 	"math"
 	"os"
@@ -121,11 +121,11 @@ func (s *Strategy) Backtest(params []float64) float64 {
 	}
 
 	v, _ := s.env.Get("StartCash")
-	s.Startcash = v.Float()
+	s.Startcash = v.(float64)
 	s.Balance[0] = s.Startcash
 
 	v, _ = s.env.Get("StartBar")
-	s.Startbar = int(v.Int())
+	s.Startbar = v.(int)
 
 	for s.Bar = 0; s.Bar < s.Barcount-1; s.Bar++ {
 		s.Evaluate()
