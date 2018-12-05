@@ -125,7 +125,7 @@ func (s *Strategy) Backtest(params []float64) float64 {
 	s.Balance[0] = s.Startcash
 
 	v, _ = s.env.Get("StartBar")
-	s.Startbar = v.(int)
+	s.Startbar = int(v.(int64))
 
 	for s.Bar = 0; s.Bar < s.Barcount-1; s.Bar++ {
 		s.Evaluate()

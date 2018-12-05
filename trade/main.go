@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/markcheno/go-quote"
-	"github.com/markcheno/go-trade"
+	"github.com/kjx98/go-quote"
+	"github.com/kjx98/go-trade"
 )
 
 func main() {
 
 	//prices, _ := quote.NewQuoteFromYahoo("gld", "2000", "2015", quote.Daily, true)
-	prices, _ := quote.NewQuoteFromCSVFile("spy", "spy.csv")
+	//prices, _ := quote.NewQuoteFromCSVFile("spy", "spy.csv")
+	prices, _ := quote.NewQuoteFromCSVFile("gold", "gold.csv")
 
 	script := `
 	
